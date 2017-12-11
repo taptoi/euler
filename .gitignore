@@ -3,3 +3,6 @@
 ################################################################################
 
 /ProjectEuler/.vs/ProjectEuler/v15
+/ProjectEuler/ProjectEuler/bin/Debug
+/ProjectEuler/ProjectEuler/obj/Debug
+*.suo
