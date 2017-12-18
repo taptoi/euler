@@ -7,3 +7,32 @@
 
 //Evaluate the sum of all the amicable numbers under 10000.
 
+let isProperDivisor divident divisor =
+    if divident > divisor && divident % divisor = 0  then true else false    
+
+let properDivisors i = 
+    seq { 1 .. i-1 }
+    |> Seq.map( fun v -> if isProperDivisor i v then Some v else None )
+    |> Seq.choose id
+
+let sumProperDivisors i =
+    properDivisors i 
+    |> Seq.reduce (+)
+
+let isAmicable i =
+    if i <= 200 then false else
+        let candidate = sumProperDivisors i
+        if candidate = 1 then false else
+            let sumProperDivisorsCandidate = sumProperDivisors candidate
+            if candidate <> i &&
+               sumProperDivisorsCandidate = i
+            then true else false
+
+let allAmicableUnder i =
+    seq { 200.. i-1 }
+    |> Seq.map (fun v -> if isAmicable v then Some v else None)
+    |> Seq.choose id
+
+let sumAllAmicableUnder i =
+    allAmicableUnder i
+    |> Seq.reduce (+)

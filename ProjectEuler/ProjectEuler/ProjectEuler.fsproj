@@ -54,9 +54,12 @@
     <Compile Include="P9.fs" />
     <Compile Include="P10.fs" />
     <Compile Include="P11.fs" />
-    <Compile Include="ValueTest.fs" />
     <Compile Include="P16.fs" />
     <Compile Include="P17.fs" />
+    <Compile Include="P20.fs" />
+    <Compile Include="P21.fs" />
+    <Compile Include="P22.fs" />
+    <Compile Include="P23.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
