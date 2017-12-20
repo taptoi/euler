@@ -60,6 +60,7 @@
     <Compile Include="P21.fs" />
     <Compile Include="P22.fs" />
     <Compile Include="P23.fs" />
+    <Compile Include="P18.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>

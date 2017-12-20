@@ -69,8 +69,9 @@ let getAllIntegersThatAreNotSumsOfAbundantNumbersUnder limit =
     for sum in allSums do sumTable.[sum] <- true
     seq{
         for i in 1 .. limit do
-            if not sumTable.[i]
-                then yield Some i else yield None
+            match sumTable.[i] = false with
+            | true -> yield Some i 
+            | false -> yield None
     }
     |> Seq.choose id
 
