@@ -10,8 +10,7 @@
 
         let isEven x = x % 2 = 0
 
-        let result =
-            int(4e6) |> limitedFibonacchi |> Seq.where(fun x -> isEven(x)) |> Seq.sum
+        let solve = int(4e6) |> limitedFibonacchi |> Seq.where(fun x -> isEven(x)) |> Seq.sum
 
 
         

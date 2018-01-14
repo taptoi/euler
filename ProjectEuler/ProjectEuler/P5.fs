@@ -8,4 +8,4 @@ module P5 =
                             xs |> List.forall(fun x -> i % x = 0))
     
     let input = [ 11; 12; 13; 14; 15; 16; 17; 18; 19; 20 ]
-    let result = input |> smallestDivisibleByAll
+    let solve = input |> smallestDivisibleByAll

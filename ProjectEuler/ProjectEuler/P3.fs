@@ -1,7 +1,6 @@
 ﻿namespace ProjectEuler
 
     open System
-    open System.Diagnostics
     module P3 =
         let testNum = 600851475143L
         let testNum2 = 13195L
@@ -28,13 +27,8 @@
                             | false -> findPrimeFactorLoop (y-2L)
             findPrimeFactorLoop (sqrt N)
 
+        let solve = findHighestPrimeFactor 600851475143L
 
-        let ownWatch = Stopwatch.StartNew()
-        let test1 = findHighestPrimeFactor 600851475143L
-        ownWatch.Stop()
-
-
-        printfn "Timer: %f" ownWatch.Elapsed.TotalMilliseconds
 
 
 

@@ -15,4 +15,4 @@ module P6 =
     let diff limit =
         (squareOfSum limit) - (sumOfSquares limit)
 
-    let result = diff 100
+    let solve = diff 100

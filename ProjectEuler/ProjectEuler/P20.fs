@@ -1,5 +1,6 @@
 ﻿module P20
-
+let (solve : int) = 
+    failwith "not implemented"
 //n! means n × (n − 1) × ... × 3 × 2 × 1
 
 //For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800,

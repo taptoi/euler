@@ -24,32 +24,6 @@ let getAllAbundantNumbersUnder limit =
      }
 
 
-// for i in s find the sum of all pairs i,u where i,u are in s
-// return the distinct values of these
-//let findSumsOfAllPairsInSeq s =
-//    seq{
-//        for i in s do
-//            for j in s do
-//                yield i + j
-//    }
-//    |> Seq.distinct
-
-//1 2 3 4
-
-//a0+a0
-//a0+a1
-//a0+a2
-//a0+a3
-
-//a1+a1
-//a1+a2
-//a1+a3
-
-//a2+a2
-//a2+a3
-
-//a3+a3
-
 let getAllSumsOfPairsInSeq (arr : int array) =
     seq{
         for i in 0 .. arr.Length - 1 do
@@ -75,8 +49,6 @@ let getAllIntegersThatAreNotSumsOfAbundantNumbersUnder limit =
     }
     |> Seq.choose id
 
-//let limit = 28123
-
-let res(limit) =
-    getAllIntegersThatAreNotSumsOfAbundantNumbersUnder limit
+let solve =
+    getAllIntegersThatAreNotSumsOfAbundantNumbersUnder 28123
     |> Seq.reduce (+)

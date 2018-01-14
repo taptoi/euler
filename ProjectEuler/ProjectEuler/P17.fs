@@ -30,6 +30,7 @@ let toStringUnderTwenty i =
     | 17 -> "seventeen"
     | 18 -> "eighteen"
     | 19 -> "nineteen"
+    | _ -> failwith "Invalid input."
 
 // Get the string indicating tens by i, so if i = 5, then return "fifty"
 let tenS i =
@@ -43,6 +44,7 @@ let tenS i =
     | 7 -> "seventy"
     | 8 -> "eighty"
     | 9 -> "ninety"
+    | _ -> failwith "Invalid input"
 
 let hundredS = "hundred"
 let thousandS = "one thousand"
@@ -84,8 +86,8 @@ let countLetters (s:string) =
     s.Replace (" ", "")
     |> fun s' -> s'.ToCharArray().Length
 
-let res lim =
-    seq{ 1 .. lim}
+let solve =
+    seq{ 1 .. 1000}
     |> Seq.map (fun i -> toString i)
     |> Seq.fold (fun acc elem -> addWithSpace acc elem) ""
     |> countLetters

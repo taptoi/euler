@@ -11,7 +11,7 @@ module P7 =
             i > (div N 2L) || ((modulo N i) <> 0L && check (i + 1L))
         check 2L
 
-    let loop =
+    let solve =
         let mutable found = false
         let mutable count = 1L
         let mutable x = 3L

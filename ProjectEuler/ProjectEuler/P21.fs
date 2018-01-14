@@ -36,3 +36,5 @@ let allAmicableUnder i =
 let sumAllAmicableUnder i =
     allAmicableUnder i
     |> Seq.reduce (+)
+
+let solve = sumAllAmicableUnder 10000

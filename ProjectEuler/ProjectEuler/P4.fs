@@ -15,17 +15,4 @@ module P4 =
         s |> Seq.max
 
     
-    let x = findLargestPalindrome
-
-
-//        let rec next ita itb =
-//            let v =  ita * itb
-//            match isPalindrome v with
-//            | true -> yield v
-//            | false -> if ita > minval then
-//                            if itb > minval then next ita (itb - 1) else next (ita - 1) maxval
-//                       else // ita 100
-//                            if itb > minval then next ita (itb - 1) else ()
-//        next maxval maxval
-        
-        
+    let solve = findLargestPalindrome

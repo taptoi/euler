@@ -1,32 +1,50 @@
 ﻿module P16
 open System
 
-let rec nthPowOfTwo n (acc : double) =
-    if n = 0 then acc
-    else nthPowOfTwo (n-1) (acc * 2.0)
+
+let nthPowerOf2 n =
+    let rec getNext (v : bigint) count =
+        if count = n then 
+            v * 2I
+        else
+            getNext (v * 2I) (count + 1)
+    getNext 1I 1
 
 
-let round (x:double) = 
-    x 
-    |> System.Math.Round
-    |> int
+let getMaxPowerOfTen (d : bigint) =
+    let rec getNext curr n =
+        let pow = curr * 10I
+        if d / pow < 1I then
+            n
+        else getNext pow (n + 1I)
+    getNext 1I 0I
 
-let allDigitsOf (v : double) =
-    let rec nextDigit (d : double) =
-       let curr = d.ToString().ToCharArray().[0]
-       seq{
-           yield curr
-           let next = d / 10.
-           if next > 0. then
-                yield! nextDigit next
-            }
-    nextDigit v
+let pow (x : bigint) (y : bigint) =
+    if y = 0I then 1I else
+        let rec getNext curr n =
+            if (n = y) then curr
+            else getNext (curr * x) (n + 1I)
+        getNext x 1I
 
 
-let print (cs: char seq) =
-    cs |> Seq.iter (fun c -> printf "%c" c)
 
-let result() =
-    nthPowOfTwo 10 1.0
-    |> allDigitsOf
-    |> print
+let getDigitsOf (v : bigint) =
+    let powOfTen = getMaxPowerOfTen v
+    let rec yieldNext a b c  = // 1024 0 3
+        seq {
+            let a' = a - b * (pow 10I (c + 1I)) // 1024
+            let b' = a' / (pow 10I c) // 1
+            let c' = c - 1I
+            yield Some b'
+            if c > 0I then
+                yield! yieldNext a' b' c'
+            else yield None
+         }
+    yieldNext v 0I powOfTen
+
+
+let solve =
+    nthPowerOf2 1000
+    |> getDigitsOf
+    |> Seq.choose id
+    |> Seq.reduce (+)
